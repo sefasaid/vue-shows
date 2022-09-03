@@ -42,9 +42,26 @@ const breakpoints = {
 <template>
   <p v-if="loading">Loading data...</p>
   <div class="show-card" v-if="selectedShow && !loading">
+    <div class="show-card-navigation">
+      <router-link class="show-card-navigation-back" to="/">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20">
+          <path
+            d="m10 16-6-6 6-6 1.062 1.062L6.875 9.25H16v1.5H6.875l4.187 4.188Z"
+          />
+        </svg>
+        Home
+      </router-link>
+    </div>
     <div class="show-card-header">
       <div class="show-card-image">
-        <img :src="selectedShow.image.medium" alt="show image" />
+        <img
+          :src="
+            selectedShow.image
+              ? selectedShow.image.medium
+              : 'https://via.placeholder.com/300?text=' + selectedShow.name
+          "
+          alt="show image"
+        />
       </div>
       <div class="show-card-info">
         <h1>{{ selectedShow.name }}</h1>
@@ -98,16 +115,25 @@ const breakpoints = {
 </template>
 
 <style scoped>
-.show-card {
-  margin: 20px;
-  padding: 20px;
+.show-card-navigation svg {
+  fill: white;
+}
+.show-card-navigation {
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid white;
   display: flex;
+}
+.show-card-navigation-back {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 10px 0;
+}
+
+.show-card {
+  margin: 10px;
+  padding: 10px;
   flex-direction: column;
-  border-radius: 10px;
-  border: 1px rgba(0, 0, 0, 0.25) solid;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .show-card-header {
   display: flex;

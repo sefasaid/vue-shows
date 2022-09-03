@@ -52,7 +52,7 @@ img {
 @media (min-width: 1024px) {
   .show {
     width: 100%;
-    height: 500px;
+    height: 300px;
   }
   h1 {
     font-size: 25px;

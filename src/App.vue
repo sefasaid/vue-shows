@@ -44,13 +44,6 @@ const clearSearch = () => {
             to="/"
             >Home</RouterLink
           >
-          <a
-            v-bind:class="
-              routeName === 'detail' ? 'router-link-exact-active' : ''
-            "
-            v-if="routeName === 'detail'"
-            >Show Detail</a
-          >
         </nav>
       </div>
 
@@ -88,7 +81,11 @@ const clearSearch = () => {
     </div>
   </header>
 
-  <RouterView />
+  <div class="container">
+    <div class="container-card">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -103,6 +100,7 @@ header {
 header {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 nav {
@@ -138,6 +136,7 @@ nav a {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  max-width: 700px;
 }
 .search-bar {
   display: flex;
@@ -182,6 +181,23 @@ nav a {
   align-items: center;
   flex: 1;
 }
+.container {
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.container-card {
+  max-width: 700px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px rgba(0, 0, 0, 0.25) solid;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 @media (min-width: 1024px) {
   .search-bar {
     width: 250px;
@@ -192,6 +208,9 @@ nav a {
 
   .wrapper {
     flex-direction: row;
+  }
+  .container {
+    display: flex;
   }
 }
 </style>

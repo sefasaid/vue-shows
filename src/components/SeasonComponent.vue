@@ -28,9 +28,4 @@ h1,
 h2 {
   font-size: 100%;
 }
-@media (min-width: 1024px) {
-  img {
-    height: 400px;
-  }
-}
 </style>

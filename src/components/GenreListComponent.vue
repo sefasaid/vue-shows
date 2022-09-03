@@ -27,8 +27,8 @@ const breakpoints = {
     spaceBetween: 20,
   },
   1024: {
-    slidesPerView: 5,
-    spaceBetween: 30,
+    slidesPerView: 3,
+    spaceBetween: 20,
   },
 };
 // component variables
@@ -68,7 +68,7 @@ const shows = getShowsByGenre(props.genre);
 </template>
 <style scoped>
 .genre-name {
-  margin: 20px;
+  margin: 10px;
 }
 .swiper-slide {
   -webkit-transition: 250ms all;
@@ -90,6 +90,6 @@ const shows = getShowsByGenre(props.genre);
 .swiper-container {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 </style>
